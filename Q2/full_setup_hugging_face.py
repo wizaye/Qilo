@@ -9,22 +9,22 @@ from transformers import pipeline
 import requests
 from bs4 import BeautifulSoup
 
-# Step 1: Scrape the Wikipedia page
-url = "https://en.wikipedia.org/wiki/Luke_Skywalker"
-response = requests.get(url)
-soup = BeautifulSoup(response.text, 'html.parser')
+# # Step 1: Scrape the Wikipedia page
+# url = "https://en.wikipedia.org/wiki/Luke_Skywalker"
+# response = requests.get(url)
+# soup = BeautifulSoup(response.text, 'html.parser')
 
-# Step 2: Extract the content
-content = ""
-for paragraph in soup.find_all('p'):
-    content += paragraph.text
+# # Step 2: Extract the content
+# content = ""
+# for paragraph in soup.find_all('p'):
+#     content += paragraph.text
 
-# Step 3: Save the content to a .txt file
-file_path = "luke_skywalker_wikipedia_content.txt"
-with open(file_path, "w", encoding="utf-8") as file:
-    file.write(content)
+# # Step 3: Save the content to a .txt file
+# file_path = "luke_skywalker_wikipedia_content.txt"
+# with open(file_path, "w", encoding="utf-8") as file:
+#     file.write(content)
 
-print(f"Content saved to {file_path}")
+# print(f"Content saved to {file_path}")
 
 # Load the document
 loader = TextLoader('luke_skywalker_wikipedia_content.txt')

@@ -8,24 +8,25 @@ import requests
 from bs4 import BeautifulSoup
 import google.generativeai as genai
 import os
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "YOUR_GOOGLE_APPLICATION_CREDENTIALS.json"
 
-# Step 1: Scrape the Wikipedia page
-url = "https://en.wikipedia.org/wiki/Luke_Skywalker"
-response = requests.get(url)
-soup = BeautifulSoup(response.text, 'html.parser')
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "/Users/vijayendhergatla/.config/gcloud/application_default_credentials.json"
 
-# Step 2: Extract the content
-content = ""
-for paragraph in soup.find_all('p'):
-    content += paragraph.text
+# # Step 1: Scrape the Wikipedia page
+# url = "https://en.wikipedia.org/wiki/Luke_Skywalker"
+# response = requests.get(url)
+# soup = BeautifulSoup(response.text, 'html.parser')
 
-# Step 3: Save the content to a .txt file
-file_path = "luke_skywalker_wikipedia_content.txt"
-with open(file_path, "w", encoding="utf-8") as file:
-    file.write(content)
+# # Step 2: Extract the content
+# content = ""
+# for paragraph in soup.find_all('p'):
+#     content += paragraph.text
 
-print(f"Content saved to {file_path}")
+# # Step 3: Save the content to a .txt file
+# file_path = "luke_skywalker_wikipedia_content.txt"
+# with open(file_path, "w", encoding="utf-8") as file:
+#     file.write(content)
+
+# print(f"Content saved to {file_path}")
 
 # Load the document
 loader = TextLoader('luke_skywalker_wikipedia_content.txt')
@@ -70,9 +71,9 @@ def ask_question():
     context = get_relevant_chunks(question)
     input_text = f"{context} {question}"
     # Query the Google Generative AI API
-    genai.configure(api_key = 'YOUR_API_KEY')
+    genai.configure(api_key = 'AIzaSyC0azZmebSBcytmPGwdb5S7hquLliVGFDw')
     answer = genai.GenerativeModel('gemini-1.5-flash').generate_content(
-        'Here are the contexts for the question:'+context+'and Here is the question:'+question+'only generate the content for the question if the question is relevant to the context',
+        'Here are the contexts for the question:'+context+'and Here is the question:'+question+'only generate the answer for the question if the question is relevant to the context and also donot disclose the context in the answer or whether it is relevant or not to the context',
     ).text
     return jsonify({"question": question, "answer": answer})
 
