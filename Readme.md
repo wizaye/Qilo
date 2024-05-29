@@ -15,5 +15,4 @@ Here's The Corresponding Problem Statements for the Repo:
 3. Q2 + UI (Any User Interface).
 
 
-The Explaination and Video Demonstrations of the Above problem statements can be viewed from this `Google Drive` link:
-https://drive.google.com/drive/folders/1gApAPEkuCbSW2dJr6kt592Rtdb8V7QaO?usp=sharing
+
