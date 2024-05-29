@@ -19,6 +19,7 @@ def is_about_whereabouts(message):
     whereabouts_questions = ["how are you", "how's it going", "where are you"]
     return any(question in message.lower() for question in whereabouts_questions)
 
+st.set_page_config(layout='wide')
 st.title("Chat with Luke Skywalker")
 
 # Initialize chat history
@@ -27,17 +28,18 @@ if "messages" not in st.session_state:
 
 # Display chat messages from history on app rerun
 for message in st.session_state.messages:
-    with st.chat_message(message["role"]):
+    with st.sidebar:
+        st.write(message["role"])
+    with st.container():
         st.markdown(message["content"])
 
 # Button to toggle speech audio output
 enable_audio = st.sidebar.checkbox("Enable Speech Output")
 
 # Accept user input
-col1, col2 = st.columns([4, 1])
-# with col1:
 prompt = st.chat_input("Ask a Question?")
-# with col2:
+
+# Record audio button
 if st.button("🎙️"):
      # Record audio
     with st.spinner("Recording..."):
@@ -55,21 +57,16 @@ if st.button("🎙️"):
 if prompt:
     # Add user message to chat history
     st.session_state.messages.append({"role": "user", "content": prompt})
-    # Display user message in chat message container
-    with st.chat_message("user"):
-        st.markdown(prompt)
-
+    
     # Check if user input is a greeting
     if is_greeting(prompt):
         # Display a generic response
-        with st.chat_message("assistant"):
-            st.write_stream(response_generator("Hello there! How can I assist you today?"))
+        st.write("Luke Skywalker: Hello there! How can I assist you today?")
         # Add assistant response to chat history
         st.session_state.messages.append({"role": "assistant", "content": "Hello there! How can I assist you today?"})
     elif is_about_whereabouts(prompt):
         # Respond to whereabouts question
-        with st.chat_message("assistant"):
-            st.write_stream(response_generator("I'm just here, ready to help! How about you?"))
+        st.write("Luke Skywalker: I'm just here, ready to help! How about you?")
         # Add assistant response to chat history
         st.session_state.messages.append({"role": "assistant", "content": "I'm just here, ready to help! How about you?"})
     else:
@@ -79,8 +76,7 @@ if prompt:
             data = response.json()
             answer = data["answer"]
             # Display assistant response with typing animation
-            with st.chat_message("assistant"):
-                st.write_stream(response_generator(answer))
+            st.write(answer)
             # Add assistant response to chat history
             st.session_state.messages.append({"role": "assistant", "content": answer})
             
