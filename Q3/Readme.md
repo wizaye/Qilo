@@ -5,7 +5,7 @@ This project aims to design an User Interface(UI) for the REST API Calling to a 
 
 Below is a flowchart depicting the overall process of the project:
 
-![Flowchart](/images/Flowchart.png)
+![Flowchart](Q3/images/Flowchart.png)
 
 ## Folder Structure and File Descriptions
 ### Main Directory
