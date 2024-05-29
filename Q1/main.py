@@ -27,6 +27,7 @@ def save_data():
     with open('students.json', 'w') as f:
         json.dump([student.dict() for student in students_info], f)
 
+save_data()
 # Load existing data on startup
 students_info = load_data()
 
