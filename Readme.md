@@ -16,4 +16,4 @@ Here's The Corresponding Problem Statements for the Repo:
 
 
 The Explaination and Video Demonstrations of the Above problem statements can be viewed from this `Google Drive` link:
-[Explaination and Demonstrations](http://example.com)
+http://example.com
