@@ -1,8 +1,10 @@
 
-# """
-# This script is responsible for scraping the content of a Wikipedia page
-# related to Luke Skywalker and saving it to a text file.
-# """
+"""
+This script is responsible for scraping the content of a Wikipedia page
+related to Luke Skywalker and saving it to a text file.
+Both the BeautifulSoup and wikipediaapi libraries code is provided.
+WikipediaAPI makes more efficeint use of the Wikipedia content
+"""
 
 # import requests
 # from bs4 import BeautifulSoup
