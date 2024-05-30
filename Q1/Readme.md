@@ -20,8 +20,8 @@ Here's the Flow of the Project:
 
 **Clone the repository**:
    ```bash
-   git clone <repository_url>
-   cd <repository_directory>
+   git clone https://github.com/wizaye/Qilo.git
+   cd Qilo/Q1
    ```
 
 **Create a virtual environment**:
@@ -39,11 +39,8 @@ Here's the Flow of the Project:
 
  **Start the FastAPI server**:
    ```bash
-   uvicorn app:app --reload
+   uvicorn main:app --reload
    ```
-
-**Access the API documentation**:
-   Open your web browser and navigate to `http://127.0.0.1:8000/docs` to see the interactive API documentation provided by Swagger UI.
 
 ## API Endpoints
 
