@@ -6,7 +6,7 @@ The project includes web scraping data present in `Luke Skywalker's` wikipedia p
 
 Below is a flowchart depicting the overall process of the project:
 
-![Flowchart](images/Flowchart2.png)
+![Flowchart2](images/Flowchart2.png)
 
 ## Folder Structure and File Descriptions
 ### Main Directory

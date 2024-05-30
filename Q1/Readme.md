@@ -6,7 +6,7 @@ This project is a simple CRUD (Create, Read, Update, Delete) application for man
  
 Here's the Flow of the Project:
 
-![Flowchart](images/Flowchart1.png)
+![Flowchart1](images/Flowchart1.png)
 
 ## Installation
 
